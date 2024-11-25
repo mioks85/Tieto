@@ -1,10 +1,8 @@
-
 <?php include('config.php'); ?>
 <!doctype html>
-<html lang="en">
+<html lang="et">
 
 <head>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
 
@@ -17,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"></a>
+            <a class="navbar-brand" href="#">TIETO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -25,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link  text-info" href="/tieto/Tieto/index.php">| Avaleht |</a>
+                        <a class="nav-link text-info" href="/tieto/Tieto/index.php">| Avaleht |</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link text-info" href="/tieto/Tieto/admin/index.php">| Admin |</a>
@@ -35,25 +33,21 @@
                         | Grupid |
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php">Ettevõtted</a>
+                            <a class="dropdown-item" href="index.php">Ettevõtted</a>
                             <?php
                                 $paring = 'SELECT * FROM grupid';
                                 $valjund = mysqli_query($yhendus, $paring);
-                                    while($rida = mysqli_fetch_row($valjund)){
-                                        echo '<a class="dropdown-item" href="?grupp='.$rida[0].'">'.$rida[1].'</a>';
-}
-?>
-</div>
-</li>
+                                while($rida = mysqli_fetch_row($valjund)){
+                                    echo '<a class="dropdown-item" href="?grupp='.$rida[0].'">'.$rida[1].'</a>';
+                                }
+                            ?>
+                        </div>
+                    </li>
                 </ul>
             </div>
-            <form method="get" action="#" class="form-inline my-2 my-lg-0">
-                Otsing <input type="search" name="otsi" class="form-control mr-sm-2" aria-label="Search">
-            <button type="submit" class="btn btn-success my-2 my-sm-0">Otsi</button>
-            </form>
         </div>
     </nav>
-    <div style="background: url(https://wallpaper.dog/large/20467118.jpg" class="jumbotron bg-cover text-white">
+    <div style="background: url(https://wallpaper.dog/large/20467118.jpg) no-repeat center center; background-size: cover;" class="jumbotron text-white">
         <div class="container py-5 text-center">
             <h1 class="display-4 font-weight-bold">TIETO</h1>
             <p class="font-italic mb-0">ITS23</p>
